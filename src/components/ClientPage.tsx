@@ -59,22 +59,22 @@ export default function ClientPage({ initialData }: ClientPageProps) {
       <main className="min-h-screen p-8 md:p-24 pb-24 max-w-3xl mx-auto">
         {/* Hero Section */}
         <section className="mb-16 text-center">
-          <h1 className="text-4xl font-bold mb-4">Umut ISIK</h1>
+          <h1 className="text-4xl font-bold mb-4">Mehmet Alpay</h1>
           <div className="flex gap-4 mb-4 justify-center items-center text-sm">
-            <Link href="https://github.com/penguenumut" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5" target="_blank">
+            <Link href="https://github.com/mehmetalpayy" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5" target="_blank">
               <FaGithub className="text-lg" />
               <span>GitHub</span>
             </Link>
-            <Link href="https://linkedin.com/in/umutisik1" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5" target="_blank">
+            <Link href="https://www.linkedin.com/in/mehmet-alpay/" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5" target="_blank">
               <FaLinkedin className="text-lg" />
               <span>LinkedIn</span>
             </Link>
-            <Link href="mailto:me@umut.ai" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5">
+            <Link href="mailto:mehmetcompeng@gmail.com" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1.5">
               <MdEmail className="text-lg" />
               <span>Email</span>
             </Link>
           </div>
-          <p className="text-lg text-gray-600">Senior Full-Stack Developer & AI Enthusiast</p>
+          <p className="text-lg text-gray-600">Junior Machine Learning Engineer</p>
         </section>
 
         {/* Projects Section */}

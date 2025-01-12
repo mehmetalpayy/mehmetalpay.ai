@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Umut ISIK - me@umut.ai",
-  description: "Personal portfolio and blog of Umut ISIK",
+  title: "Mehmet Alpay - me@mehmetalpay.ai",
+  description: "Personal portfolio and blog of Mehmet Alpay",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/favicon.png" }],
