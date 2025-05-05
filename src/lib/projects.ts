@@ -60,6 +60,9 @@ export async function getProjectBySlug(slug: string): Promise<ProjectContent> {
         htmlContent
       };
     } catch (error) {
-      throw new Error(`Failed to load project: ${error.message}`);
+        if (error instanceof Error) {
+                  throw new Error(`Failed to load project: ${error.message}`);
+                }
+                throw new Error('Failed to load project: Unknown error');
     }
 }
