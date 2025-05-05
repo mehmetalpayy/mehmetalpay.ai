@@ -73,7 +73,7 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-[#DCB894]/30 rounded-xl p-8 shadow-md backdrop-blur-sm"
+                className="card"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                   <div>

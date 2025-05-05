@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-samples": "ts-node scripts/generate-sample-projects.ts"
+    "generate-samples": "ts-node scripts/generate-sample-projects.ts",
+    "optimize-images": "ts-node src/scripts/optimizeImages.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

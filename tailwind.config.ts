@@ -30,6 +30,11 @@ const config: Config = {
           800: '#323F4B',
           900: '#1F2933'
         },
+        bg: {                       // ← yeni grup
+          page:  '#F8F3ED',         // body zemini – sabit kalacak
+          card:  '#F3E8DD',         // tüm içerik kartları
+          divider: '#E6D8CA',       // (isteğe bağlı) shape-divider rengi
+        },
         accent: '#E19364',
         background: '#FDF8F3',
         text: '#1F2933',

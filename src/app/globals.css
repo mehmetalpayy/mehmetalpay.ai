@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    @apply bg-[#F8F3ED] text-primary-800;
+    @apply bg-bg-page text-primary-800 antialiased;   /* zemin sabit */
   }
 }
 
@@ -23,6 +19,11 @@
 
   .btn-primary {
     @apply bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-bg-card rounded-xl shadow-lg p-6
+           border border-bg-page/60 backdrop-blur-sm;
   }
 }
 

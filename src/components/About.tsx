@@ -111,7 +111,7 @@ const About = () => {
           {/* Sağ taraf - Bilgiler */}
           <div className="lg:col-span-8 space-y-8">
             {/* Intro Section */}
-            <div className="bg-[#DCB894]/30 rounded-xl p-8 shadow-md backdrop-blur-sm">
+            <div className="card">
               <h1 className="text-4xl font-bold text-primary-800 mb-6">
                 Hi 👋 I'm a Machine Learning Engineer
               </h1>
@@ -137,7 +137,7 @@ const About = () => {
             </div>
 
             {/* Experience Section */}
-            <div className="bg-[#DCB894]/30 rounded-xl p-8 shadow-md backdrop-blur-sm">
+            <div className="card">
               <h2 className="text-2xl font-semibold text-primary-800 mb-6">Experience</h2>
               <ul className="space-y-4 list-disc list-inside text-primary-700">
                 <li>Worked on NLP and AI projects with expertise in models like BERT and ChatGPT, including personal information detection and fine-tuning large language models (LLMs).</li>

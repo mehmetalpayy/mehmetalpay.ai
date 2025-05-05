@@ -84,7 +84,7 @@ const Contact = () => {
                   required
                   className="w-full px-3 py-2 rounded-lg border border-primary-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent
                            bg-white/50 backdrop-blur-sm transition-all duration-300"
-                  placeholder="your.email@example.com"
+                  placeholder="mehmetcompeng@gmail.com"
                 />
               </div>
             </div>
@@ -173,7 +173,7 @@ const Contact = () => {
                   <FaEnvelope className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/mehmetalpayy"
                   className="text-primary-600 hover:text-primary-800 transition-colors p-2 hover:bg-primary-100 rounded-full"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -181,7 +181,7 @@ const Contact = () => {
                   <FaGithub className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/mehmet-alpay/"
                   className="text-primary-600 hover:text-primary-800 transition-colors p-2 hover:bg-primary-100 rounded-full"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -99,7 +99,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="card"
             >
               <div className="flex items-center mb-4 text-primary-700">
                 {category.icon}
