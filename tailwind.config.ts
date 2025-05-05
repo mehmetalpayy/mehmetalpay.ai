@@ -6,12 +6,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          50: '#FDF8F3',
+          100: '#F9EBE0',
+          200: '#F3D5C1',
+          300: '#EDBFA2',
+          400: '#E7A983',
+          500: '#E19364',
+          600: '#B47650',
+          700: '#87593C',
+          800: '#5A3B28',
+          900: '#2D1E14'
+        },
+        secondary: {
+          50: '#F5F7FA',
+          100: '#E4E7EB',
+          200: '#CBD2D9',
+          300: '#9AA5B1',
+          400: '#7B8794',
+          500: '#616E7C',
+          600: '#52606D',
+          700: '#3E4C59',
+          800: '#323F4B',
+          900: '#1F2933'
+        },
+        bg: {                       // ← yeni grup
+          page:  '#F8F3ED',         // body zemini – sabit kalacak
+          card:  '#F3E8DD',         // tüm içerik kartları
+          divider: '#E6D8CA',       // (isteğe bağlı) shape-divider rengi
+        },
+        accent: '#E19364',
+        background: '#FDF8F3',
+        text: '#1F2933',
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
       },
     },
   },

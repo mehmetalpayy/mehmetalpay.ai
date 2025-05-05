@@ -1,33 +1,54 @@
-import { getAllProjects } from "@/lib/server/projects";
-import ClientPage from "../components/ClientPage";
-import { Suspense } from "react";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Projects from '@/components/Projects';
+import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
+import Contact from '@/components/Contact';
 
-function LoadingFallback() {
+export default function Home() {
   return (
-    <main className="min-h-screen p-8 md:p-24 max-w-3xl mx-auto">
-      <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4"></div>
-        <div className="h-4 bg-gray-200 rounded w-64 mx-auto mb-16"></div>
+    <main className="min-h-screen">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen bg-[#F8F3ED] relative">
+        <Hero />
+        <div className="absolute bottom-0 w-full h-16 bg-gradient-to-b from-transparent to-[#F3E8DD]" />
+      </section>
 
-        <div className="space-y-6">
-          {[1, 2].map((i) => (
-            <div key={i} className="border border-gray-200 rounded-lg p-6">
-              <div className="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
-              <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-            </div>
-          ))}
+      {/* About Section */}
+      <section id="about" className="min-h-screen bg-[#F3E8DD] relative py-16">
+        <About />
+        <div className="absolute bottom-0 w-full h-16 bg-gradient-to-b from-transparent to-[#EDE7E1]" />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="min-h-screen bg-[#EDE7E1] relative py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Projects />
         </div>
-      </div>
-    </main>
-  );
-}
+        <div className="absolute bottom-0 w-full h-16 bg-gradient-to-b from-transparent to-[#E8D0B9]" />
+      </section>
 
-export default async function Page() {
-  const projects = await getAllProjects();
-  return (
-    <Suspense fallback={<LoadingFallback />}>
-      <ClientPage initialData={projects} />
-    </Suspense>
+      {/* Experience Section */}
+      <section id="experience" className="min-h-screen bg-[#E8D0B9] relative py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Experience />
+        </div>
+        <div className="absolute bottom-0 w-full h-16 bg-gradient-to-b from-transparent to-[#E2C4A6]" />
+      </section>
+
+      {/* Skills Section - Güncellendi */}
+      <section id="skills" className="min-h-screen bg-[#E2C4A6] relative py-16">
+        <Skills />
+        <div className="absolute bottom-0 w-full h-16 bg-gradient-to-b from-transparent to-[#DCB894]" />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="bg-[#DCB894] relative py-12">
+        <Contact />
+      </section>
+    </main>
   );
 }

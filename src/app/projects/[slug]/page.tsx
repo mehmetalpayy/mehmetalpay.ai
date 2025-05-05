@@ -1,57 +1,70 @@
-import { getProjectBySlug } from "@/lib/server/projects";
-import Link from "next/link";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { HiArrowLeft } from "react-icons/hi";
-import ScrollToTop from "@/components/ScrollToTop";
+// src/app/projects/[slug]/page.tsx
+import { notFound } from 'next/navigation';
+import { getProjectBySlug } from '@/lib/projects';
+import { Metadata } from 'next';
+import Image from 'next/image';
 
-interface ProjectPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+
+// Metadata için yeni yaklaşım
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;               // 👉 await eklendi
+
+  try {
+    const project = await getProjectBySlug(slug);
+    return {
+      title: `${project.metadata.title} | Mehmet Alpay`,
+      description: project.metadata.description,
+    };
+  } catch {
+    return {
+      title: 'Project Not Found',
+      description: 'The requested project could not be found.',
+    };
+  }
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
   const { slug } = await params;
-  const project = await getProjectBySlug(slug);
+  if (!slug) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  try {
+    const project = await getProjectBySlug(slug);
 
-  return (
-    <>
-      <main className="min-h-screen p-8 pb-24 md:p-24">
-        <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors mb-8 inline-flex items-center gap-2">
-          <HiArrowLeft className="text-xl" />
-          <span>Back</span>
-        </Link>
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <article className="prose prose-lg">
+          <h1 className="text-4xl font-bold text-center mb-12">
+            {project.metadata.title}
+          </h1>
 
-        <article className="max-w-3xl mx-auto">
-          <header className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-            <p className="text-gray-600 mb-4 text-lg">{project.description}</p>
-            {project.coverImage && (
-              <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
-                <Image
-                  src={project.coverImage}
-                  alt={`${project.title} cover image`}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
-                  fill
-                  className="rounded-lg object-contain"
-                />
-              </div>
-            )}
-          </header>
+          {project.metadata.image && (
+            <div className="my-12 mx-auto w-[600px] h-[300px] relative">
+              <Image
+                src={project.metadata.image}
+                alt={project.metadata.title}
+                fill
+                className="object-contain rounded-lg"
+                sizes="600px"
+                quality={90}
+                priority
+              />
+            </div>
+          )}
 
           <div
-            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-blue-600"
-            dangerouslySetInnerHTML={{ __html: project.content }}
+            className="mt-12"
+            dangerouslySetInnerHTML={{
+              __html: project.htmlContent.replace(/<h1[^>]*>.*?<\/h1>/, ''),
+            }}
           />
         </article>
-      </main>
-      <ScrollToTop />
-    </>
-  );
+      </div>
+    );
+  } catch {
+    notFound();
+  }
 }
