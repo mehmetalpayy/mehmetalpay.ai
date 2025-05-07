@@ -23,7 +23,8 @@ const skillsData = [
       "Large Language Models (LLMs)",
       "Retrieval-Augmented Generation (RAG)",
       "Agent Orchestration",
-      "Prompt Engineering"
+      "Prompt Engineering",
+      "Fine-Tuning"
     ]
   },
   {
@@ -36,7 +37,8 @@ const skillsData = [
       "Hugging Face",
       "LangChain",
       "LlamaIndex",
-      "LangGraph"
+      "LangGraph",
+      "CrewAI"
     ]
   },
   {
@@ -47,8 +49,10 @@ const skillsData = [
       "Python",
       "C",
       "SQL",
-      "TypeScript",
-      "JavaScript"
+      "FastAPI",
+      "REST APIs",
+      "Streamlit",
+      "Gradio"
     ]
   },
   {
@@ -60,7 +64,10 @@ const skillsData = [
       "Docker",
       "FastAPI",
       "MLflow",
-      "Weights & Biases"
+      "Weights & Biases",
+      "CI/CD",
+      "Model Deployment",
+      "Model Monitoring"
     ]
   },
   {
@@ -69,9 +76,7 @@ const skillsData = [
     description: "Knowledge of database systems and cloud platforms.",
     skills: [
       "PostgreSQL",
-      "MongoDB",
-      "AWS",
-      "Google Cloud"
+      "AWS"
     ]
   }
 ];

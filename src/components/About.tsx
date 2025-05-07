@@ -102,7 +102,7 @@ const About = () => {
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="mt-1">📚</span>
-                  <span>Preparatory School: Completed University English Preparatory program</span>
+                  <span>Preparatory School: Completed University English Preparatory Program</span>
                 </li>
               </ul>
             </div>
